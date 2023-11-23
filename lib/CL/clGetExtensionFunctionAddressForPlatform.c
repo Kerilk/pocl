@@ -40,7 +40,7 @@ CL_API_SUFFIX__VERSION_1_2
     }
 
   assert (pocl_platform);
-  if (platform != pocl_platform)
+  if (!POCL_PLATFORM_VALID (platform, pocl_platform))
     {
       POCL_MSG_WARN ("Requested Function Address not "
                      "for PoCL platform, ignoring\n");
